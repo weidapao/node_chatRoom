@@ -5,6 +5,13 @@ const mime = require('mime')
 
 const cache = {}
 
+http.createServer(function(req,res){
+  var filePath = false
+  if(req.url === './'){
+    filePath = 'public/index.html'
+  }
+})
+
 // 返回404
 function send404(res) {
   res.writeHead(404, { 'Content-Type': 'text/plain' })
